@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;
+    public int moveSpeed;
 
     public Rigidbody2D rigidBody;
 
@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
 
     public int coinsCount;
+
+    public int healthPoints;
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -88,10 +91,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Coins"))
+        if (collision.CompareTag("Speed"))
+        {
+            Transform col = collision.transform;
+            col.transform.position = new Vector2(999, 999);
+        }
+        if (collision.CompareTag("Coins"))
         {
             Destroy(collision.gameObject);
             coinsCount++;
+        }
+        if (collision.CompareTag("Health"))
+        {
+            Destroy(collision.gameObject);
         }
     }
 }

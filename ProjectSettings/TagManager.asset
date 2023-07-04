@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Coins
+  - Speed
+  - Health
   layers:
   - Default
   - TransparentFX
@@ -42,9 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Trap
+    uniqueID: 508355313
+    locked: 0
   - name: Floor
     uniqueID: 2133966075
     locked: 0
   - name: Wall
     uniqueID: 1669830029
+    locked: 0
+  - name: Player
+    uniqueID: 3717603217
     locked: 0
